@@ -1,14 +1,18 @@
 import './App.css'
-import Quepasa from './components/Quepasa';
+import { Title } from './components/Title/Title'
+import { Box } from './components/Box/Box'
 
+import * as React from 'react'
 
-function App() {
+function App () {
   return (
     <div className="App">
       <header className="App-header">
-        <Quepasa />
+        <Title />
       </header>
-      
+      <main className="App-content">
+        <Box />
+      </main>
     </div>
   )
 }
