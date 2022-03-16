@@ -1,6 +1,6 @@
 import './App.css'
 import { Title } from './components/Title/Title'
-import { Box } from './components/Box/Box'
+import Box from './components/Box/Box'
 
 import * as React from 'react'
 
