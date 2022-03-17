@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.todo {
+  display: flex;
+  font-family: 'Fredoka';
+  font-weight: 300;
+  align-items: center;
+  background-color: white;
+  padding: .3rem 2rem;
+  border-radius: 10px;
+}
+
+.todo p {
+  margin-right: auto;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.container-icons{
+  display: flex;
+  gap: .5rem;
+}
+.container-icons > *{
+  color: white;
+  padding: .5rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.container-icons > *:nth-child(1){
+  background-color: #56f054;
+}
+.container-icons > *:nth-child(1):hover{
+  background-color: #04f100;
+}
+.container-icons > *:nth-child(2){
+  background-color: #f05454;
+}
+.container-icons > *:nth-child(2):hover{
+  background-color: #ee0000;
+}
+.container-icons > *:nth-child(3){
+  background-color: #5954f0;
+}
+.container-icons > *:nth-child(3):hover{
+  background-color: #0800ec;
+
+}
