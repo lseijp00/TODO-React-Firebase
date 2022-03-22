@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 .container-icons > *:nth-child(1){
-  background-color: #56f054;
+  background-color: #44bb42;
 }
 .container-icons > *:nth-child(1):hover{
   background-color: #04f100;

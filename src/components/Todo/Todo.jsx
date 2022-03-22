@@ -6,16 +6,20 @@ import EditIcon from '@mui/icons-material/Edit'
 import CheckIcon from '@mui/icons-material/Check'
 import './Todo.css'
 
-const Todo = ({ text }) => {
+const Todo = ({ text, arr, ids, index }) => {
+  const handleDelete = () => {
+    deleteDoc(doc(db, 'todos', ids[index]))
+  }
+
   return (
     <div className='todo'>
       <p>{text}</p>
       <div className='container-icons'>
         <CheckIcon fontSize="medium" style={{ opacity: 0.7 }} />
-        <DeleteIcon fontSize="medium" style={{ opacity: 0.7 }} onClick={() => { deleteDoc(doc(db, 'todos', text)) }} />
+        <DeleteIcon fontSize="medium" style={{ opacity: 0.7 }} onClick={handleDelete} />
         <EditIcon fontSize="medium" style={{ opacity: 0.7 }} />
       </div>
-      
+
     </div>
   )
 }

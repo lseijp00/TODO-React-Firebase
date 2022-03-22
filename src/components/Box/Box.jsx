@@ -8,16 +8,21 @@ import ListTodo from '../ListTodo/ListTodo'
 
 function Box () {
   const [todos, setTodos] = useState([])
+  const [ids, setIds] = useState([])
   const [input, setInput] = useState('')
 
   useEffect(() => {
     const q = query(collection(db, 'todos'))
     const unsub = onSnapshot(q, (querySnapshot) => {
       const todosArray = []
+      const idsArray = []
       querySnapshot.forEach((doc) => {
+        // console.log(doc.id)
         todosArray.push(doc.data().todo)
+        idsArray.push(doc.id)
       })
       setTodos(todosArray)
+      setIds(idsArray)
     })
     return () => unsub()
   }, [input])
@@ -31,7 +36,6 @@ function Box () {
     })
     setInput('')
   }
-
   return (
     <>
     <div className='box'>
@@ -42,7 +46,7 @@ function Box () {
       </div>
     </div>
 
-    <ListTodo arr={todos}/>
+    <ListTodo arr={todos} ids={ids}/>
 
     </>
   )
