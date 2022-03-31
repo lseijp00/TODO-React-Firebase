@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './Box.css'
 import AddIcon from '@mui/icons-material/Add'
 import { db } from './../../firebase'
-import { addDoc, collection, onSnapshot, query, serverTimestamp } from 'firebase/firestore'
+import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore'
 import ListTodo from '../ListTodo/ListTodo'
 
 function Box () {
@@ -12,12 +12,11 @@ function Box () {
   const [input, setInput] = useState('')
 
   useEffect(() => {
-    const q = query(collection(db, 'todos'))
+    const q = query(collection(db, 'todos'), orderBy('timestamp'))
     const unsub = onSnapshot(q, (querySnapshot) => {
       const todosArray = []
       const idsArray = []
       querySnapshot.forEach((doc) => {
-        // console.log(doc.id)
         todosArray.push(doc.data().todo)
         idsArray.push(doc.id)
       })

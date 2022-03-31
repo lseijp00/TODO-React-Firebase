@@ -11,9 +11,13 @@ const Todo = ({ text, arr, ids, index }) => {
     deleteDoc(doc(db, 'todos', ids[index]))
   }
 
+  const handleEdit = () => {
+    console.log('editando...')
+  }
+
   return (
     <div className='todo'>
-      <p>{text}</p>
+      <input className='inputTodo' value={text} onChange={handleEdit}></input>
       <div className='container-icons'>
         <CheckIcon fontSize="medium" style={{ opacity: 0.7 }} />
         <DeleteIcon fontSize="medium" style={{ opacity: 0.7 }} onClick={handleDelete} />

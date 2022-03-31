@@ -10,12 +10,21 @@
   border-radius: 10px;
 }
 
+.todo .inputTodo {
+  font-family: 'Fredoka';
+  font-weight: 300;
+  margin-right: auto;
+  font-size: 20px;
+  line-height: 1;
+  outline: none;
+  border: none;
+}
+
 .todo p {
   margin-right: auto;
   font-size: 20px;
   line-height: 1;
 }
-
 .container-icons{
   display: flex;
   gap: .5rem;
